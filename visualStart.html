@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Test Information</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" type="image/png" href="favicon.ico"/>
+    </head>
+    <body>
+        <h1 id = "text">
+            Welcome to the Test...
+        </h1>
+        <h1 id = "text">
+            These are the colours you will see throughout this experiment:
+        </h1>
+        <div id = "colourContainer">
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+            <div class = "rectangle"> </div>
+        </div>
+        <div>
+            <h1 id = "text">
+                This is the colour you must respond to:
+            </h1>
+            <div id = "circleContainer">
+                <div class = "circle" style="background-color: lightgray;"></div>
+            </div>
+            <h3 id="text" style="margin-top: 50px;">
+                When you see this colour, press the spacebar as fast as possible. Try not to press on other colours
+            </h3>
+        </div>
+        <div id="buttonContainer">
+            <span class="button-default button-enabled" style="width:190px;" id="visual">Start Test</span>
+        </div>
+
+        <script>
+            colourArr = ["#191970", "#ff4500", "#ffff00", "#deb887", "#00fa9a", "#00bfff", "#0000ff", "#ff1493"];
+            
+            const rectangles = document.querySelectorAll(".rectangle");
+
+            rectangles.forEach((rect, index) => {rect.style.backgroundColor = colourArr[index % colourArr.length];} );
+
+            document.querySelector("#visual").addEventListener('click',goto);
+            function goto(evt)
+            {
+                console.log(evt.target.id);   
+                document.location.href="./"+evt.target.id+".html";
+            }
+        </script>
+
+        
+    </body>
+
+
+
+
+</html>
